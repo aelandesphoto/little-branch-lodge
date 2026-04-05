@@ -621,6 +621,65 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--bark);
         }
+
+        /* LOCAL GUIDE SECTION */
+        .local-guide {
+            padding: 4rem 2rem;
+            background: var(--warm);
+        }
+        .local-guide-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .guide-category {
+            margin-bottom: 3rem;
+        }
+        .guide-category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--bark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(0,0,0,0.08);
+        }
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.2rem;
+        }
+        .guide-card {
+            background: white;
+            border-radius: 6px;
+            padding: 1.4rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        .guide-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+        .guide-card h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--bark);
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        .guide-card .locals {
+            font-size: 0.78rem;
+            color: var(--moss);
+            margin-bottom: 0.4rem;
+        }
+        .guide-card p {
+            font-size: 0.88rem;
+            color: var(--charcoal);
+            line-height: 1.6;
+            margin: 0;
+        }
+        @media (max-width: 600px) {
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -632,6 +691,7 @@
                 <li><a href="#rooms">Rooms</a></li>
                 <li><a href="#amenities">Amenities</a></li>
                 <li><a href="#location">Location</a></li>
+                <li><a href="#guide">Local Guide</a></li>
                 <li><a href="#reviews">Reviews</a></li>
             </ul>
             <a href="https://airbnb.com/h/littlebranchlodge" target="_blank" class="cta-btn">Book Now</a>
@@ -641,7 +701,7 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <h1>Little Branch Lodge</h1>
-        <p class="subtitle">4 Bedrooms • 4.5 Bathrooms • Sleeps 14 • 2,740 sq ft</p>
+        <p class="subtitle">4 Bedrooms • 4.5 Bathrooms • Sleeps 12 • 2,740 sq ft</p>
         <div class="hero-buttons">
             <a href="https://airbnb.com/h/littlebranchlodge" target="_blank" class="hero-btn hero-btn-primary">Book Now</a>
             <a href="#rooms" class="hero-btn hero-btn-secondary">Explore</a>
@@ -948,6 +1008,57 @@
         </div>
     </section>
 
+    <!-- LOCAL GUIDE SECTION -->
+    <section class="local-guide" id="guide">
+        <div class="local-guide-container">
+            <h2 class="section-title">Local Guide</h2>
+            <p class="section-subtitle">Our favorite spots around Deep Creek Lake, handpicked for you</p>
+
+            <div class="guide-category">
+                <h3 class="guide-category-title">🍕 Food &amp; Drink</h3>
+                <div class="guide-grid">
+                    <div class="guide-card"><h4>Brenda's Pizzeria</h4><p class="locals">⭐ 173 locals recommend</p><p>The most popular place in town. Order the Abbondanza if your group is hungry! Online ordering and curbside pickup available.</p></div>
+                    <div class="guide-card"><h4>Mountain State Brewing Co</h4><p class="locals">⭐ 159 locals recommend</p><p>Deep Creek Lake's 2nd most beloved place for pizza. Great craft beers and a beautiful patio.</p></div>
+                    <div class="guide-card"><h4>MoonShadow</h4><p class="locals">⭐ 113 locals recommend</p><p>Craft beers, pub fare, theme nights, and weekend live music. A local favorite for a fun night out.</p></div>
+                    <div class="guide-card"><h4>Honi Honi Bar</h4><p class="locals">⭐ 111 locals recommend</p><p>Popular waterfront bar at Deep Creek Lake. Great atmosphere and drinks.</p></div>
+                    <div class="guide-card"><h4>Lakeside Creamery</h4><p class="locals">⭐ 112 locals recommend</p><p>Best ice cream around — a must visit. Enjoy a cone with stunning views of the lake.</p></div>
+                    <div class="guide-card"><h4>Trader's Coffee House</h4><p class="locals">⭐ 71 locals recommend</p><p>Your go-to for breakfast and coffee. A cozy start to any morning at Deep Creek.</p></div>
+                    <div class="guide-card"><h4>Arrowhead Market</h4><p class="locals">⭐ 97 locals recommend</p><p>Cute market and gas station with ready-made sandwiches, hot food, great craft beer, and legendary cinnamon rolls.</p></div>
+                    <div class="guide-card"><h4>Ace's Run Restaurant &amp; Pub</h4><p class="locals">⭐ 102 locals recommend</p><p>A local favorite for a relaxed dinner or pub night out with the group.</p></div>
+                    <div class="guide-card"><h4>Trout's House Seafood</h4><p class="locals">⭐ 11 locals recommend</p><p>Fresh, delicious seafood. The crabcakes are full of meat and not bready at all. Highly recommended.</p></div>
+                    <div class="guide-card"><h4>The Rolling Pin Bakery</h4><p class="locals">⭐ 18 locals recommend</p><p>Yummy donuts, sandwiches, and soup. A great spot for a quick and delicious bite.</p></div>
+                </div>
+            </div>
+
+            <div class="guide-category">
+                <h3 class="guide-category-title">⛷️ Activities</h3>
+                <div class="guide-grid">
+                    <div class="guide-card"><h4>Wisp Resort</h4><p class="locals">⭐ 265 locals recommend · 9 min drive</p><p>Skiing, snowboarding, snow tubing, mountain coaster, archery, whitewater rafting, pontoon tours, golfing, and disc golf. Year-round fun!</p></div>
+                    <div class="guide-card"><h4>Deep Creek Fun Zone</h4><p class="locals">⭐ 119 locals recommend</p><p>Indoor arcades, go-karts, and bumper boats. Great entertainment for the whole group.</p></div>
+                    <div class="guide-card"><h4>Fun Land</h4><p class="locals">⭐ 97 locals recommend</p><p>Mini golf, arcade, go-karts, bumper cars, climbing walls, and carousel. Perfect for families.</p></div>
+                    <div class="guide-card"><h4>Lake Life Boat Rentals</h4><p class="locals">⭐ 17 locals recommend</p><p>Best fleet in Deep Creek — newer and well-maintained boats for rent. Explore the lake in style.</p></div>
+                    <div class="guide-card"><h4>Deep Creek Lake State Park</h4><p class="locals">Maryland's premier lake beach</p><p>A beautiful sandy beach on the lake. Bring water shoes — it gets rocky underfoot in the water.</p></div>
+                    <div class="guide-card"><h4>Blackwater Falls</h4><p class="locals">⭐ 48 locals recommend · 50–60 min away</p><p>Stunning waterfall views year-round. In winter, enjoy the longest sled run on the East Coast with a magic carpet lift to the top.</p></div>
+                    <div class="guide-card"><h4>Nemacolin Resort &amp; Spa</h4><p class="locals">⭐ 52 locals recommend · 45 min away</p><p>Treat yourself to a spa day at this luxurious resort. A must visit for a special occasion.</p></div>
+                    <div class="guide-card"><h4>Monkey Business Adventure Park</h4><p class="locals">⭐ 51 locals recommend</p><p>Thrilling high ropes course. Call ahead to check hours and availability.</p></div>
+                    <div class="guide-card"><h4>Deep Creek Lavender Farm</h4><p class="locals">⭐ 78 locals recommend · Memorial Day–Labor Day</p><p>Take in the lavender scents or bring home lavender products. Open seasonally.</p></div>
+                    <div class="guide-card"><h4>Herrington Manor State Park</h4><p class="locals">⭐ 111 locals recommend</p><p>Scenic mountain lake with swimming, kayaking, fishing, and hiking in a serene setting.</p></div>
+                </div>
+            </div>
+
+            <div class="guide-category">
+                <h3 class="guide-category-title">🏔️ Sightseeing</h3>
+                <div class="guide-grid">
+                    <div class="guide-card"><h4>Swallow Falls State Park</h4><p class="locals">⭐ 248 locals recommend · 15 min away</p><p>Easy hike with gorgeous waterfall views. A quick walk reaches the upper falls; a longer trail leads to the lower falls. State park entry fee applies.</p></div>
+                    <div class="guide-card"><h4>Fallingwater</h4><p class="locals">Frank Lloyd Wright landmark · 1 hr away</p><p>Iconic home built into a mountain by Frank Lloyd Wright. A historic landmark well worth the drive.</p></div>
+                    <div class="guide-card"><h4>New Germany State Park</h4><p class="locals">⭐ 90 locals recommend</p><p>Scenic mountain lake with swimming, fishing, hiking, and beautiful forested trails.</p></div>
+                    <div class="guide-card"><h4>Casselman Bridge State Park</h4><p class="locals">⭐ 36 locals recommend</p><p>One of the oldest stone arch bridges in the U.S. A beautiful and peaceful riverside park.</p></div>
+                    <div class="guide-card"><h4>Hoye-Crest</h4><p class="locals">Maryland's highest point</p><p>Hike to the highest point in Maryland for panoramic mountain views. A rewarding and memorable challenge.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- REVIEWS SECTION -->
     <section class="reviews" id="reviews">
         <h2 class="section-title">Guest Reviews</h2>
@@ -985,7 +1096,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Little Branch Lodge</h4>
-                <p>Your perfect mountain escape on Deep Creek Lake. 4 bedrooms, 4.5 bathrooms, sleeps 14.</p>
+                <p>Your perfect mountain escape on Deep Creek Lake. 4 bedrooms, 4.5 bathrooms, sleeps 12.</p>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
