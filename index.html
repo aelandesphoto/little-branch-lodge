@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Branch Lodge - Deep Creek Lake Vacation Rental</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bark: #5c3d2e;
+            --moss: #6b7f5e;
+            --cream: #fdf8f2;
+            --warm: #f5ede0;
+            --amber: #c8813a;
+            --charcoal: #2e2a25;
+            --gold: #f0c887;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--cream);
+            line-height: 1.6;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--bark);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--amber);
+        }
+
+        .cta-btn {
+            background: var(--amber);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .cta-btn:hover {
+            background: var(--bark);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            header {
+                padding: 1rem;
+            }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/resized/living-1.jpeg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .hero-btn {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+
+        .hero-btn-primary {
+            background: var(--amber);
+            color: white;
+            border-color: var(--amber);
+        }
+
+        .hero-btn-primary:hover {
+            background: var(--bark);
+            border-color: var(--bark);
+            transform: translateY(-2px);
+        }
+
+        .hero-btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .hero-btn-secondary:hover {
+            background: white;
+            color: var(--bark);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                width: 90%;
+            }
+        }
+
+        /* HIGHLIGHTS STRIP */
+        .highlights {
+            background: var(--warm);
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .highlight-item {
+            text-align: center;
+        }
+
+        .highlight-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--bark);
+        }
+
+        .highlight-item p {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+        }
+
+        @media (max-width: 768px) {
+            .highlights {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* ROOM TOUR SECTION */
+        .room-tour {
+            padding: 4rem 2rem;
+            background: var(--cream);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--bark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--moss);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .room-item {
+            margin-bottom: 4rem;
+        }
+
+        .room-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--bark);
+            margin-bottom: 0.5rem;
+        }
+
+        .room-description {
+            color: var(--moss);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .room-gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1rem;
+            min-height: 400px;
+        }
+
+        .gallery-large {
+            grid-row: 1 / 3;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        .gallery-large img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-large:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-small {
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        .gallery-small img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-small:hover img {
+            transform: scale(1.05);
+        }
+
+        .room-gallery-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .room-gallery {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .gallery-large {
+                grid-row: auto;
+                min-height: 250px;
+            }
+            .room-gallery-right {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .gallery-small {
+                min-height: 200px;
+            }
+        }
+
+        /* AMENITIES SECTION */
+        .amenities {
+            padding: 4rem 2rem;
+            background: var(--warm);
+        }
+
+        .amenities-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .amenity-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 6px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .amenity-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .amenity-card h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--bark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .amenity-card p {
+            font-size: 0.9rem;
+            color: var(--moss);
+        }
+
+        /* LOCATION SECTION */
+        .location {
+            padding: 4rem 2rem;
+            background: var(--cream);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+
+        .map-container {
+            border-radius: 6px;
+            overflow: hidden;
+            min-height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .location-details h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--bark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .attractions-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .attractions-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--warm);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .attractions-list li:last-child {
+            border-bottom: none;
+        }
+
+        .attractions-list strong {
+            color: var(--moss);
+        }
+
+        @media (max-width: 768px) {
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+            .map-container {
+                min-height: 300px;
+            }
+        }
+
+        /* ACCESSIBILITY SECTION */
+        .accessibility {
+            background: linear-gradient(135deg, var(--moss) 0%, var(--bark) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .accessibility h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .accessibility p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* REVIEWS SECTION */
+        .reviews {
+            padding: 4rem 2rem;
+            background: var(--warm);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .review-card {
+            background: var(--charcoal);
+            color: white;
+            padding: 2rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .review-rating {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        /* CTA BANNER */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--bark) 0%, var(--moss) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-banner-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .cta-banner-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .cta-btn {
+                width: 100%;
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--charcoal);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--warm);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: var(--warm);
+        }
+
+        /* UTILITY CLASSES */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* SCROLLBAR STYLING */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--moss);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--bark);
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <nav>
+            <a href="#" class="logo">Little Branch Lodge</a>
+            <ul>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+            </ul>
+            <a href="https://airbnb.com/h/littlebranchlodge" target="_blank" class="cta-btn">Book Now</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Little Branch Lodge</h1>
+        <p class="subtitle">4 Bedrooms • 4.5 Bathrooms • Sleeps 14 • 2,740 sq ft</p>
+        <div class="hero-buttons">
+            <a href="https://airbnb.com/h/littlebranchlodge" target="_blank" class="hero-btn hero-btn-primary">Book Now</a>
+            <a href="#rooms" class="hero-btn hero-btn-secondary">Explore</a>
+        </div>
+    </section>
+
+    <!-- QUICK HIGHLIGHTS -->
+    <section class="highlights">
+        <div class="highlight-item">
+            <div class="highlight-icon">🛁</div>
+            <h3>Hot Tub</h3>
+            <p>Covered with lake views</p>
+        </div>
+        <div class="highlight-item">
+            <div class="highlight-icon">⛵</div>
+            <h3>Boat Slip Included</h3>
+            <p>2 min drive / 8 min walk</p>
+        </div>
+        <div class="highlight-item">
+            <div class="highlight-icon">🎮</div>
+            <h3>Game Room</h3>
+            <p>Arcade, ping pong, pool table</p>
+        </div>
+        <div class="highlight-item">
+            <div class="highlight-icon">⛷️</div>
+            <h3>Wisp Resort</h3>
+            <p>9 minutes drive away</p>
+        </div>
+    </section>
+
+    <!-- ROOM TOUR SECTION -->
+    <section class="room-tour" id="rooms">
+        <h2 class="section-title">Room Tour</h2>
+        <p class="section-subtitle">Explore every corner of your mountain retreat</p>
+
+        <!-- LIVING ROOM -->
+        <div class="room-item">
+            <h3>Living Room</h3>
+            <p class="room-description">Stone fireplace, plush blue sectional, and French doors opening to panoramic mountain views. The perfect gathering space with rustic charm and modern comfort.</p>
+            <div class="room-gallery">
+                <div class="gallery-large">
+                    <img src="images/resized/living-1.jpeg" alt="Living Room with mountain views">
+                </div>
+                <div class="room-gallery-right">
+                    <div class="gallery-small">
+                        <img src="images/resized/living-2.jpeg" alt="Fireplace and French doors">
+                    </div>
+                    <div class="gallery-small">
+                        <img src="images/resized/living-3.jpeg" alt="Stone fireplace detail">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KITCHEN & DINING -->
+        <div class="room-item">
+            <h3>Kitchen & Dining</h3>
+            <p class="room-description">Fully equipped kitchen with maple cabinets, stainless steel appliances, and island seating. Dining room seats 8+ with large picture windows overlooking the lake.</p>
+            <div class="room-gallery">
+                <div class="gallery-large">
+                    <img src="images/resized/kitchen-1.jpeg" alt="Full kitchen with island">
+                </div>
+                <div class="room-gallery-right">
+                    <div class="gallery-small">
+                        <img src="images/resized/dining-1.jpeg" alt="Dining room with mountain view">
+                    </div>
+                    <div class="gallery-small">
+                        <img src="images/resized/kitchen-3.jpeg" alt="Island bar seating">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN LEVEL KING SUITE -->
+        <div class="room-item">
+            <h3>Main Level King Suite</h3>
+            <p class="room-description">Spacious king bedroom with balcony access and en-suite bathroom featuring a walk-in shower. Perfect for the primary guests seeking privacy and convenience.</p>
+            <div class="room-gallery">
+                <div class="gallery-large">
+                    <img src="images/resized/bed1-1.jpeg" alt="King bed with balcony door">
+                </div>
+                <div class="room-gallery-right">
+                    <div class="gallery-small">
+                        <img src="images/resized/bed1-2.jpeg" alt="King bed with TV">
+                    </div>
+                    <div class="gallery-small">
+                        <img src="images/resized/bed1-bath.jpeg" alt="En-suite bathroom with shower">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- UPPER LEVEL KING SUITE -->
+        <div class="room-item">
+            <h3>Upper Level King Suite</h3>
+            <p class="room-description">Luxurious king bedroom with elegant pine furnishings and an en-suite bathroom boasting a jetted soaking tub. A serene retreat within your retreat.</p>
+            <div class="room-gallery">
+                <div class="gallery-large">
+                    <img src="images/resized/bed3-1.jpeg" alt="King bed with jetted tub visible">
+                </div>
+                <div class="room-gallery-right">
+                    <div class="gallery-small">
+                        <img src="images/resized/bed3-2.jpeg" alt="King bed with pine furniture">
+                    </div>
+                    <div class="gallery-small">
+                        <img src="images/resized/bed3-bath.jpeg" alt="Jetted soaking tub">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOFT SUITE -->
+        <div class="room-item">
+            <h3>Loft Suite</h3>
+            <p class="room-description">A showstopper with vaulted ceilings, exposed wood beams, and stunning triangular picture windows framing panoramic lake views. An unforgettable master bedroom experience.</p>
+            <div class="room-gallery">
+                <div class="gallery-large">
+                    <img src="images/resized/loft-1.jpeg" alt="Triangular windows and exposed beams">
+                </div>
+                <div class="room-gallery-right">
+                    <div class="gallery-small">
+                        <img src="images/resized/loft-2.jpeg" alt="King bed in loft">
+                    </div>
+                    <div class="gallery-small">
+                        <img src="images/resized/loft-3.jpeg" alt="Loft closet and TV">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEATING ROOM & WORKSPACE -->
+        <div class="room-item">
+            <h3>Seating Room & Workspace</h3>
+            <p class="room-description">Comfortable daybed with lake-view windows and dedicated desk space. Ideal for remote work or a quiet reading nook with inspiration on all sides.</p>
+            <div class="room-gallery">
+                <div class="gallery-large">
+                    <img src="images/redo/2602200046-little-branch-lodge.jpeg" alt="Daybed with lake views">
+                </div>
+                <div class="room-gallery-right">
+                    <div class="gallery-small">
+                        <img src="images/redo/2602200047-little-branch-lodge.jpeg" alt="Seating room with bunk room">
+                    </div>
+                    <div class="gallery-small">
+                        <img src="images/redo/2602190015-little-branch-lodge.jpeg" alt="Reading nook">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GAME ROOM & FAMILY ROOM -->
+        <div class="room-item">
+            <h3>Game Room & Family Room</h3>
+            <p class="room-description">Two entertainment-packed spaces: ping pong, pool table, arcade machines, and karaoke in the game room; stone fireplace, leather sofas, and hot tub access in the family room.</p>
+            <div class="room-gallery">
+                <div class="gallery-large">
+                    <img src="images/resized/game-1.jpeg" alt="Ping pong and arcade">
+                </div>
+                <div class="room-gallery-right">
+                    <div class="gallery-small">
+                        <img src="images/resized/family-1.jpeg" alt="Family room fireplace">
+                    </div>
+                    <div class="gallery-small">
+                        <img src="images/resized/family-3.jpeg" alt="Fireplace and patio">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ENTRY & MUDROOM -->
+        <div class="room-item">
+            <h3>Entry & Mudroom</h3>
+            <p class="room-description">Welcoming entryway with grand staircase and convenient mudroom with coat storage and bench seating. Wheelchair-accessible ramp leads to the front door for easy access.</p>
+            <div class="room-gallery">
+                <div class="gallery-large">
+                    <img src="images/resized/entry.jpeg" alt="Entryway with staircase">
+                </div>
+                <div class="room-gallery-right">
+                    <div class="gallery-small">
+                        <img src="images/resized/mudroom.jpeg" alt="Mudroom storage">
+                    </div>
+                    <div class="gallery-small">
+                        <img src="images/resized/family-3.jpeg" alt="Patio door to hot tub area">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXTERIOR & OUTDOORS -->
+        <div class="room-item">
+            <h3>Exterior & Outdoors</h3>
+            <p class="room-description">A wraparound deck with panoramic lake and mountain views, covered hot tub, outdoor dining, and a private boat slip just minutes away at Deep Creek Lake.</p>
+            <div class="room-gallery">
+                <div class="gallery-large">
+                    <img src="images/redo/2103120033-little-branch-lodge.jpeg" alt="Deck with outdoor dining and lake views">
+                </div>
+                <div class="room-gallery-right">
+                    <div class="gallery-small">
+                        <img src="images/redo/2103120030-little-branch-lodge.jpeg" alt="Covered hot tub with lake views">
+                    </div>
+                    <div class="gallery-small">
+                        <img src="images/redo/0051-2104280051-little-branch-lodge.jpeg" alt="Private boat slip at Deep Creek Lake">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AMENITIES SECTION -->
+    <section class="amenities" id="amenities">
+        <div class="amenities-container">
+            <h2 class="section-title">Amenities & Features</h2>
+            <p class="section-subtitle">Everything you need for an unforgettable stay</p>
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <div class="amenity-icon">🛁</div>
+                    <h4>Hot Tub</h4>
+                    <p>Covered with stunning lake views—your personal relaxation sanctuary</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🍳</div>
+                    <h4>Full Kitchen</h4>
+                    <p>Maple cabinets, stainless steel, island—everything for home cooking</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🔥</div>
+                    <h4>Stone Fireplace</h4>
+                    <p>Multiple fireplaces create warmth and ambiance throughout the lodge</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🎮</div>
+                    <h4>Game Room</h4>
+                    <p>Ping pong, pool table, and arcade—entertainment for the whole group</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🎤</div>
+                    <h4>Karaoke</h4>
+                    <p>Sing your heart out with professional-quality karaoke equipment</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">📺</div>
+                    <h4>Entertainment</h4>
+                    <p>Smart TVs, streaming services, and plenty of cozy seating</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">💻</div>
+                    <h4>High-Speed WiFi</h4>
+                    <p>WISP connection keeps you connected with fast, reliable internet</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">👔</div>
+                    <h4>In-Unit Laundry</h4>
+                    <p>Full washer and dryer for convenient clothing care</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🚗</div>
+                    <h4>Free Parking</h4>
+                    <p>Ample parking on the property—no parking fees or hassles</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">⛵</div>
+                    <h4>Boat Slip Included</h4>
+                    <p>2-minute drive or 8-minute walk—ready to explore the lake</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🏊</div>
+                    <h4>Community Pool & Gym</h4>
+                    <p>Access to resort-style amenities for active guests</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">♿</div>
+                    <h4>Wheelchair Accessible</h4>
+                    <p>Accessible ramp to front door—welcoming to all guests</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCESSIBILITY CALLOUT -->
+    <section class="accessibility">
+        <h3>♿ Wheelchair Accessible</h3>
+        <p>Little Branch Lodge features a wheelchair-accessible ramp leading to the front door, ensuring all guests can enjoy this beautiful mountain retreat.</p>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <section class="location" id="location">
+        <h2 class="section-title">Location & Nearby Attractions</h2>
+        <div class="location-content">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3090.5555555555556!2d-79.41666!3d39.41111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sDeep%20Creek%20Lake%2C%20Oakland%2C%20MD!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="location-details">
+                <h4>Roman Ridge Road, Oakland, MD 21550</h4>
+                <p>Nestled in the heart of Deep Creek Lake country in Garrett County, Little Branch Lodge offers the perfect base for mountain adventures, water activities, and peaceful lakeside retreats.</p>
+
+                <h4>Nearby Attractions</h4>
+                <ul class="attractions-list">
+                    <li><span>High Mountain Sports</span> <strong>2 min drive</strong></li>
+                    <li><span>Boat Slip Access</span> <strong>2 min drive</strong></li>
+                    <li><span>Wisp Resort (Skiing & Mountain Coaster)</span> <strong>9 min drive</strong></li>
+                    <li><span>Swallow Falls State Park</span> <strong>15 min drive</strong></li>
+                    <li><span>Double G RV Park (Boat Parking)</span> <strong>7 min drive</strong></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section class="reviews" id="reviews">
+        <h2 class="section-title">Guest Reviews</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-rating">★★★★★</div>
+                <p class="review-text">"Absolutely spectacular! This lodge is even more beautiful in person than the photos. Our family of 12 had plenty of space, the hot tub was incredible, and we can't wait to come back."</p>
+                <p class="review-author">— The Johnson Family</p>
+            </div>
+            <div class="review-card">
+                <div class="review-rating">★★★★★</div>
+                <p class="review-text">"Perfect getaway with friends. The loft suite is stunning, the game room kept everyone entertained, and the location is unbeatable. Great communication with the host!"</p>
+                <p class="review-author">— Sarah M.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-rating">★★★★★</div>
+                <p class="review-text">"Best holiday vacation we've had. The fireplace, the views, the covered hot tub—everything was perfect. The lodge has everything you need and so much character."</p>
+                <p class="review-author">— The Martinez Family</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <h2>Ready for Your Mountain Escape?</h2>
+        <p>Book Little Branch Lodge today and create memories that will last a lifetime.</p>
+        <div class="cta-banner-buttons">
+            <a href="https://airbnb.com/h/littlebranchlodge" target="_blank" class="cta-btn">Book Now on Airbnb</a>
+            <a href="mailto:littlebranchlodge@gmail.com" class="cta-btn" style="background: transparent; border: 2px solid white; color: white;">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Little Branch Lodge</h4>
+                <p>Your perfect mountain escape on Deep Creek Lake. 4 bedrooms, 4.5 bathrooms, sleeps 14.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#rooms">Room Tour</a></li>
+                    <li><a href="#amenities">Amenities</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="https://airbnb.com/h/littlebranchlodge" target="_blank">Book on Airbnb</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:littlebranchlodge@gmail.com">littlebranchlodge@gmail.com</a></li>
+                    <li><a href="https://www.facebook.com/littlebranchlodge/" target="_blank">Facebook</a></li>
+                    <li>Deep Creek Lake, Maryland</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>About</h4>
+                <p>Experience luxury mountain hospitality with all the modern comforts you need for an unforgettable group getaway.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Little Branch Lodge. All rights reserved. | Designed for unforgettable memories.</p>
+        </div>
+    </footer>
+</body>
+</html>
